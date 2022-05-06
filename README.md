@@ -1,2 +1,3 @@
 # animated-react-carousel-tut
-Created with CodeSandbox
+
+An animated carousel in React using Chakra UI, Framer Motion and emotion.
