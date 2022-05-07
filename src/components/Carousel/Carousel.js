@@ -14,15 +14,30 @@ const Container = styled.div`
 
 const Carousel = ({ title, slides }) => {
   const [ currentSlide, setCurrentSlide ] = useState(0);
+  const [ slideAnimation, setSlideAnimation ] = useState("slideIn");
   
   return (
       <Container>
+
        { slides.map( (slide, index) => {
-         if(index === currentSlide) return <SlideImage slide={slide} />
+         if(index === currentSlide) return (
+          <SlideImage slide={slide} animation={slideAnimation} setSlideAnimation={setSlideAnimation} />
+         );
          return null;
        })}
-       <Controls  setSlide={setCurrentSlide} currentSlide={currentSlide} slideCount={slides.length} />
-       <Indicator slides={slides} currentSlide={currentSlide} />
+
+       <Controls
+       setSlide={setCurrentSlide} 
+       currentSlide={currentSlide} 
+       slideCount={slides.length} 
+       setSlideAnimation={setSlideAnimation} 
+       />
+
+       <Indicator
+       slides={slides} 
+       currentSlide={currentSlide} 
+       />
+       
        <Content slide={slides[currentSlide]} />
       </Container>
   )

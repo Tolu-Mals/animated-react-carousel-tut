@@ -1,17 +1,25 @@
 import { Flex, IconButton } from "@chakra-ui/react";
-import { ChevronLeftIcon, ChevronRightIcon } from "@chakra-ui/icons"
+import { ChevronLeftIcon, ChevronRightIcon } from "@chakra-ui/icons";
 
-const Controls = ({ setSlide, currentSlide, slideCount }) => {
+const Controls = ({ setSlide, currentSlide, slideCount, setSlideAnimation }) => {
+  
   const handleNext = () => {
-    setSlide((currentSlide + 1) % slideCount);
+    setSlideAnimation("slideOut");
+    setTimeout(() => {
+      setSlide((currentSlide + 1) % slideCount);
+    }, 200);
   }
 
   const handlePrev = () => {
-    if(currentSlide === 0){
-      setSlide(slideCount - 1);
-      return;
-    }
-    setSlide((currentSlide - 1) % slideCount);
+    setSlideAnimation("slideOut");
+
+    setTimeout(() => {
+      if(currentSlide === 0){
+        setSlide(slideCount - 1);
+        return;
+      }
+      setSlide((currentSlide - 1) % slideCount);
+    }, 200);
   }
 
   return (
