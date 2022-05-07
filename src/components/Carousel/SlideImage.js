@@ -6,14 +6,14 @@ import { motion } from "framer-motion";
 
 const Container = styled(motion.div)`
   height: 100%;
-  opacity: 0;
+  overflow: hidden;
 `;
 
 const SlideImage = ({ slide }) => {
 
   const variants = {
-    visible: { opacity: 1 },
-    hidden: { opacity: 0 }
+    visible: { x: 0 },
+    hidden: { x: "-100%"}
   }
 
   useEffect(() => {
@@ -23,9 +23,9 @@ const SlideImage = ({ slide }) => {
 
   return (
     <Container
-      initial="hidden"
-      animate="visible"
-      variants={variants}
+    initial="hidden"
+    animate="visible"
+    variants={variants}
     >
       <Image boxSize="100%" objectFit="cover" src={slide.image} alt={slide.title} />
     </Container>

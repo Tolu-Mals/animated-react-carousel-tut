@@ -7,6 +7,10 @@ const Controls = ({ setSlide, currentSlide, slideCount }) => {
   }
 
   const handlePrev = () => {
+    if(currentSlide === 0){
+      setSlide(slideCount - 1);
+      return;
+    }
     setSlide((currentSlide - 1) % slideCount);
   }
 
