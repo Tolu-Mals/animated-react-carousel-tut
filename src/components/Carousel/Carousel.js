@@ -11,7 +11,10 @@ const Carousel = ({ title, slides }) => {
   
   return (
       <>
-       <SlideImage slide={slides[currentSlide]} />
+       { slides.map( (slide, index) => {
+         if(index === currentSlide) return <SlideImage slide={slide} />
+         return null;
+       })}
        <Controls  setSlide={setCurrentSlide} currentSlide={currentSlide} slideCount={slides.length} />
        <Indicator slides={slides} currentSlide={currentSlide} />
        <Content slide={slides[currentSlide]} />

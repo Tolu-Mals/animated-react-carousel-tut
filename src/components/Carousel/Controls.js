@@ -18,11 +18,14 @@ const Controls = ({ setSlide, currentSlide, slideCount }) => {
     w="100%"
     justify="space-between"
     p={4}
+    sx={{
+      transform: "translateY(-50%)"
+    }}
     >
       <IconButton
       aria-label="Previous Slide"
       icon={<ChevronLeftIcon />}
-      colorScheme="blue"
+      colorScheme="green"
       size="lg"
       onClick={handlePrev}
       />
@@ -30,7 +33,7 @@ const Controls = ({ setSlide, currentSlide, slideCount }) => {
       <IconButton
       aria-label="Previous Slide"
       icon={<ChevronRightIcon />}
-      colorScheme="blue"
+      colorScheme="green"
       size="lg"
       onClick={handleNext}
       />

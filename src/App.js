@@ -26,7 +26,14 @@ const slides = [
 ]
 export default function App() {
   return (
-    <Box w="100%" h="100vh" pos="relative" left="0" top="0">
+    <Box
+    w="100%"
+    h="100vh"
+    pos="relative"
+    left="0"
+    top="0"
+    bg="#333"
+    >
       <Carousel title="Chakra Carousel" slides={slides} />
     </Box>
   );
