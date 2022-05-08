@@ -13,10 +13,10 @@ const Content = ({ slide }) => {
         transform: "translate(-50%, -80%)"
       }}
     >
-      <Heading as="h2" mb={4}>
+      <Heading as="h2" size="2xl" mb={4} fontWeight="300">
         {slide.title}
       </Heading>
-      <Text>{slide.description}</Text>
+      <Text fontWeight="300" fontSize="xl">{slide.description}</Text>
     </Box>
   );
 };
